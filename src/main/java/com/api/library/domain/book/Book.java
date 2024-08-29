@@ -20,6 +20,7 @@ public class Book {
     private String description;
     private String date;
     private int number_page;
+    private boolean is_available;
 
     @Column(unique = true)
     private String isbn;
