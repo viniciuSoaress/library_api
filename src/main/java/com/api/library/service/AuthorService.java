@@ -31,6 +31,12 @@ public class AuthorService {
         return this.authorRepository.save(author);
     }
 
+    public Author read(UUID id){
+
+        return this.authorRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Author not exist"));
+    }
+
     public Author update(AuthorRequestDTO data, UUID id){
         Author author = this.authorRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Author not exist"));
@@ -39,11 +45,6 @@ public class AuthorService {
         author.setNationality(data.nationality());
 
         return this.authorRepository.save(author);
-    }
-
-    public Author searchAuthor(UUID id){
-        return this.authorRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Author not exist"));
     }
 
     public void delete (UUID id){

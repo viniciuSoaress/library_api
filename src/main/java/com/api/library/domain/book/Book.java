@@ -4,6 +4,8 @@ import com.api.library.domain.author.Author;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "book")
 @AllArgsConstructor
@@ -14,7 +16,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     private String title;
     private String description;
@@ -24,6 +26,7 @@ public class Book {
 
     @Column(unique = true)
     private String isbn;
+
 
     @ManyToOne
     @JoinColumn(name = "author_id")

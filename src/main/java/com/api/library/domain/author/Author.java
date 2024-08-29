@@ -3,6 +3,8 @@ package com.api.library.domain.author;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "author")
 @AllArgsConstructor
@@ -13,7 +15,7 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
     private String name;
     private String nationality;
 }

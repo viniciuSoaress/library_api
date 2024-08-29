@@ -1,5 +1,5 @@
 CREATE TABLE author (
-    id TEXT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name VARCHAR(100),
     nationality VARCHAR(50)
 );
