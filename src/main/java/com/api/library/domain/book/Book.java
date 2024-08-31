@@ -8,10 +8,10 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "book")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     @Id
@@ -22,7 +22,7 @@ public class Book {
     private String description;
     private String date;
     private int number_page;
-    private boolean is_available;
+    private Boolean is_available;
 
     @Column(unique = true)
     private String isbn;

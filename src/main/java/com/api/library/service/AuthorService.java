@@ -55,7 +55,15 @@ public class AuthorService {
         Pageable pageable = PageRequest.of(page, size);
         Page<Book> pageBooks = this.bookRepository.findBookWithAuthor(id, pageable);
 
-        return pageBooks.map(book -> new Book(book.getId(), book.getTitle(), book.getDescription(), book.getDate(), book.getNumber_page(),book.is_available() ,book.getIsbn(), book.getAuthor()))
+        return pageBooks.map(book -> new Book(
+                book.getId(),
+                book.getTitle(),
+                book.getDescription(),
+                book.getDate(),
+                book.getNumber_page(),
+                book.getIs_available(),
+                book.getIsbn(),
+                book.getAuthor()))
                 .stream().toList();
     }
 
